@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Focus-Space</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- CSS của bạn -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body class="bg-light">
+
+  <!-- HERO -->
+  <section class="hero text-white d-flex align-items-end">
+    <div class="container py-5">
+      <h1 class="hero-title display-6 mb-2">Đặt chỗ nhanh – Không bỏ lỡ khung giờ đẹp</h1>
+      <p class="hero-subtitle mb-1">Chọn vé theo giờ, xem sơ đồ ghế trống và thanh toán chỉ trong vài bước.</p>
+      <p class="mb-0">Ưu đãi dành cho học sinh – sinh viên mỗi tuần.</p>
+    </div>
+  </section>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#details">Focus-Space</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Trang chủ</a></li>
+          <li class="nav-item"><a class="nav-link" href="tickets.html">Vé</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Giỏ hàng vé</a></li>
+          <li class="nav-item"><a class="nav-link" href="transactions.html">Thanh toán vé</a></li>
+          <li class="nav-item"><a class="nav-link" href="venues.html">Venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Giỏ hàng venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="devices.html">Thiết bị</a></li>
+          <li class="nav-item"><a class="nav-link" href="transactions_venue.html">Thanh toán venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="history.html">Lịch sự kiện</a></li>
+        </ul>
+      </div>
+         <!-- Trong NAVBAR -->
+      
+    </div>
+    <div class="auth-bar">
+      <span id="welcome" class="me-2 text-muted"></span>
+      <button class="btn btn-sm btn-primary" id="btn_login" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</button>
+      <button class="btn btn-sm btn-success" id="btn_register" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký</button>
+      <button class="btn btn-sm btn-danger d-none" id="btn_logout">Đăng xuất</button>
+    </div>
+  </nav>
+
+  <!-- THÔNG TIN CHI TIẾT -->
+  <section id="details" class="section container py-5">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body p-4">
+            <h2 class="h4 mb-3">Thông tin chi tiết</h2>
+            <p class="text-muted-ink mb-3">Không gian yên tĩnh, phù hợp học nhóm/làm việc cá nhân.</p>
+            <p>Hỗ trợ ổ điện từng chỗ, wifi mạnh, nước uống.</p>
+
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-start gap-2">
+                  <i class="bi bi-geo-alt text-primary fs-5"></i>
+                  <div>
+                    <div class="fw-semibold">Địa chỉ</div>
+                    <div class="text-muted-ink">123 Main, Quận 1, TP Hồ Chí Minh</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-start gap-2">
+                  <i class="bi bi-clock-history text-primary fs-5"></i>
+                  <div>
+                    <div class="fw-semibold">Giờ mở cửa</div>
+                    <div class="text-muted-ink">09:00 – 18:00 (T3–CN)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-start gap-2">
+                  <i class="bi bi-person-check text-primary fs-5"></i>
+                  <div>
+                    <div class="fw-semibold">Sức chứa</div>
+                    <div class="text-muted-ink">~ 40 chỗ</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-start gap-2">
+                  <i class="bi bi-headset text-primary fs-5"></i>
+                  <div>
+                    <div class="fw-semibold">Hotline</div>
+                    <div class="text-muted-ink">0909 000 000</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="mb-2 fw-semibold">Tiện ích</div>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <span class="badge bg-light text-dark border">Wi‑Fi mạnh</span>
+              <span class="badge bg-light text-dark border">Ổ điện từng chỗ</span>
+              <span class="badge bg-light text-dark border">Máy lạnh</span>
+              <span class="badge bg-light text-dark border">Nước uống</span>
+            </div>
+
+            <div class="d-flex gap-2">
+              <a href="tickets.html" class="btn btn-primary">Xem vé & bảng giá</a>
+              <a href="#map" class="btn btn-outline-secondary">Xem bản đồ</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div id="venueCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./assets/img/152.jpg" class="d-block w-100" alt="Không gian đọc">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/img/N7.jpg" class="d-block w-100" alt="Không gian đọc">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/img/L1.jpg" class="d-block w-100" alt="Không gian đọc">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/img/N4.jpg" class="d-block w-100" alt="Không gian đọc">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/img/L3.jpg" class="d-block w-100" alt="Không gian đọc">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/img/L5.jpg" class="d-block w-100" alt="Không gian đọc">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#venueCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#venueCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOẠT ĐỘNG -->
+  <section id="activities" class="section container py-5">
+    <h2 class="h4 mb-4">Hoạt động tại không gian</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Workshop</h5>
+            <p class="card-text">Kỹ năng ghi chú & tập trung (Thứ 7, 9:00 – 11:00).</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Study Jam</h5>
+            <p class="card-text">Học nhóm ôn thi (CN, 13:30 – 17:00).</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Talk</h5>
+            <p class="card-text">Chia sẻ lộ trình Front-end (Thứ 6, 19:30 – 21:00).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section id="map" class="section container py-5">
+    <h2 class="h4 mb-3">Bản đồ</h2>
+    <div class="card">
+      <div class="card-body p-0">
+        <div class="ratio ratio-21x9">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.433703116215!2d106.69300699999999!3d10.779219299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3768e72937%3A0x8c2f12a9ec9bb150!2zMTUyIE5hbSBLw70gS2jhu59pIE5naMSpYSwgQsOibiBOZ2jDqywgUXXhuq1uIDEsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1724100000000!5m2!1svi!2s"
+            loading="lazy" style="border:0;" allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANG TĨNH: THÔNG TIN CÔNG TY + MXH -->
+  <section id="about" class="section container py-5">
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-4">
+        <div class="row g-4">
+          <!-- Cột 1: Liên hệ -->
+          <div class="col-md-6">
+            <h4 class="fw-bold mb-3">Thông tin công ty</h4>
+            <p class="mb-2"><i class="bi bi-building text-primary me-2"></i><b>Công ty:</b> ABC Booking JSC</p>
+            <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i><b>Địa chỉ:</b> 123 Main, Quận 1, TP Hồ Chí Minh</p>
+            <p class="mb-2"><i class="bi bi-telephone text-primary me-2"></i><b>Điện thoại:</b> 0123 456 789</p>
+            <p class="mb-0"><i class="bi bi-envelope text-primary me-2"></i><b>Email:</b> support@focus-space.vn</p>
+          </div>
+          <!-- Cột 2: Giới thiệu + MXH -->
+          <div class="col-md-6">
+            <h4 class="fw-bold mb-3">Về chúng tôi</h4>
+            <p class="text-muted-ink">Chúng tôi vận hành hệ thống đặt vé và chỗ ngồi với mục tiêu mang lại không gian học tập và làm việc yên tĩnh, tiện nghi và minh bạch.</p>
+            <div class="d-flex flex-wrap gap-2 mt-2">
+              <a class="btn btn-outline-primary btn-sm" href="https://facebook.com/" target="_blank" rel="noopener"><i class="bi bi-facebook me-1"></i>Facebook</a>
+              <a class="btn btn-outline-danger btn-sm" href="https://instagram.com/" target="_blank" rel="noopener"><i class="bi bi-instagram me-1"></i>Instagram</a>
+              <a class="btn btn-outline-success btn-sm" href="https://zalo.me/" target="_blank" rel="noopener"><i class="bi bi-chat-dots me-1"></i>Zalo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4 bg-white border-top mt-5">
+    <div class="container small text-muted">
+      © 2025 BookingApp. All rights reserved.
+    </div>
+  </footer>
+
+ <!-- ALERT -->
+<div id="alertBox" class="alert d-none position-fixed top-0 start-50 translate-middle-x mt-3" role="alert" style="z-index: 9999;"></div>
+
+<!-- Modal Đăng nhập -->
+<div class="modal fade" id="loginModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Đăng nhập</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="mb-3">
+            <label class="form-label">Tên đăng nhập</label>
+            <input type="text" class="form-control" id="loginUsername" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Mật khẩu</label>
+            <input type="password" class="form-control" id="loginPassword" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+        </form>
+        <div class="mt-2 text-center">
+          Bạn chưa có tài khoản? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký ngay</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Đăng ký -->
+<div class="modal fade" id="registerModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Đăng ký</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="registerForm">
+          <div class="mb-3">
+            <label class="form-label">Tên đăng nhập</label>
+            <input type="text" class="form-control" id="regUsername" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Mật khẩu</label>
+            <input type="password" class="form-control" id="regPassword" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Họ tên</label>
+            <input type="text" class="form-control" id="regFullname" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" id="regEmail" required>
+          </div>
+          <button type="submit" class="btn btn-success w-100">Đăng ký</button>
+        </form>
+        <div class="mt-2 text-center">
+          Đã có tài khoản? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập ngay</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- các script khác của bạn -->
+<script src="./assets/js/api.js"></script>
+<script src="./assets/js/auth.js"></script>
+<script src="./assets/js/app.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,541 @@
+/* ===========================
+   Focus‑Space • Styles
+   Author: you ✨
+   NOTE: File này bám theo index.html đã gửi
+   =========================== */
+
+/* ---- Tokens (màu sắc + radius) ---- */
+:root {
+  --fs-primary: #2457f5;
+  --fs-primary-600: #1d47c5;
+  --fs-ink: #1b2430;
+  --fs-ink-2: #4b5563;
+  --fs-bg: #f5f7fb;
+  --fs-card: #ffffff;
+  --fs-border: #e5e7eb;
+  --fs-success: #16a34a;
+  --fs-danger: #ef4444;
+
+  --fs-radius: 14px;
+  --fs-radius-sm: 10px;
+  --fs-shadow: 0 10px 30px rgba(2, 8, 20, .08);
+  --fs-shadow-soft: 0 6px 18px rgba(2, 8, 20, .06);
+}
+
+/* ---- Base ---- */
+html { scroll-behavior: smooth; }
+body {
+  color: var(--fs-ink);
+  background: var(--fs-bg);
+}
+
+a { text-decoration: none; }
+a:hover { opacity: .9; }
+
+.text-muted-ink { color: var(--fs-ink-2) !important; }
+
+.section {
+  padding: 56px 0;
+  scroll-margin-top: 80px; /* để không bị navbar che */
+}
+
+.card {
+  border: 1px solid var(--fs-border);
+  border-radius: var(--fs-radius);
+  box-shadow: var(--fs-shadow-soft);
+}
+
+.card .card-body { padding: 24px; }
+
+/* ---- Navbar ---- */
+.navbar {
+  backdrop-filter: saturate(140%) blur(6px);
+}
+.navbar .nav-link {
+  padding: .65rem .9rem;
+  border-radius: 10px;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  background: rgba(36, 87, 245, .08);
+}
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  min-height: 340px;
+  padding: 56px 6%;
+  display: grid;
+  align-items: end;
+  color: #fff;
+  background: #0b1220 url("../img/kgd.jpg") center/cover no-repeat;
+  border-radius: 0 0 24px 24px;
+  box-shadow: var(--fs-shadow);
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(11,18,32,.25) 0%, rgba(11,18,32,.72) 70%, rgba(11,18,32,.9) 100%);
+}
+.hero > * {
+  position: relative; z-index: 1;
+}
+.hero-title {
+  font-weight: 700;
+  text-shadow: 0 2px 20px rgba(0,0,0,.4);
+}
+.hero-subtitle {
+  color: #dbe3ff;
+  max-width: 720px;
+}
+
+/* ---- Badge tiện ích ---- */
+.badge.bg-light.text-dark {
+  border-radius: 100px;
+  border-color: var(--fs-border) !important;
+  padding: .45rem .7rem;
+}
+
+/* ---- Buttons ---- */
+.btn-primary {
+  --bs-btn-bg: var(--fs-primary);
+  --bs-btn-border-color: var(--fs-primary);
+  --bs-btn-hover-bg: var(--fs-primary-600);
+  --bs-btn-hover-border-color: var(--fs-primary-600);
+  --bs-btn-focus-shadow-rgb: 36, 87, 245;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(36, 87, 245, .25);
+}
+.btn-outline-secondary {
+  border-radius: 10px;
+}
+
+/* ---- Gallery (album hình) ---- */
+.object-fit-cover { object-fit: cover; }
+
+/* ---- Seat map (bản đồ chỗ ngồi) ---- */
+#seatLegend .legend {
+  display: inline-block;
+  width: 16px; height: 16px;
+  border-radius: 4px; margin-right: 6px;
+  vertical-align: middle;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
+}
+.seat { width: 26px; height: 26px; border-radius: 6px; }
+.seat-map {
+  --gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(14, 26px);
+  gap: var(--gap);
+  padding: 16px;
+  background: #fff;
+  border-radius: var(--fs-radius);
+  border: 1px solid var(--fs-border);
+  box-shadow: var(--fs-shadow);
+}
+.seat.available { background: #eef3ff; border: 1px solid #cfe0ff; cursor: pointer; }
+.seat.available:hover { background: #e2ebff; }
+.seat.selected { background: var(--fs-primary); border: 1px solid var(--fs-primary-600); }
+.seat.sold { background: #f2f4f7; border: 1px solid #d1d5db; cursor: not-allowed; }
+
+#seatLegend .available { background: #eef3ff; border: 1px solid #cfe0ff; }
+#seatLegend .selected  { background: var(--fs-primary); }
+#seatLegend .sold      { background: #f2f4f7; border: 1px solid #d1d5db; }
+
+/* ---- Ticket cards ---- */
+#ticketList .card {
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+#ticketList .card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--fs-shadow);
+}
+
+/* ---- Venues ---- */
+#venuesList .card {
+  height: 100%;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  background: #fff;
+  border-top: 1px solid var(--fs-border);
+  border-radius: var(--fs-radius) var(--fs-radius) 0 0;
+  box-shadow: var(--fs-shadow-soft);
+}
+
+/* ---- Utilities ---- */
+.shadow-soft { box-shadow: var(--fs-shadow-soft) !important; }
+.rounded-xl { border-radius: 18px; }
+
+/* ---- Responsive tweaks ---- */
+@media (max-width: 991.98px) {
+  .hero { min-height: 300px; padding: 48px 5%; }
+  .seat-map { grid-template-columns: repeat(12, 26px); }
+}
+@media (max-width: 575.98px) {
+  .hero { min-height: 260px; padding: 40px 5%; }
+  .hero-title { font-size: 1.5rem; }
+  .seat-map { grid-template-columns: repeat(10, 24px); gap: 6px; }
+  .seat { width: 24px; height: 24px; }
+}
+
+.layout {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.room {
+  width: 1000px;
+  height: 700px;
+  border: 6px solid #333;
+  border-radius: 12px;
+  background: #fdfdfd;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
+  position: relative;
+}
+
+/* Zone chung */
+.zone {
+  background: #f8f9fa;
+  border: 2px dashed #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.zone-label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/* Ghế */
+.seat {
+  width: 45px;
+  height: 45px;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  margin: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.seat:hover { background: #e7f1ff; }
+
+/* Màu từng khu */
+.sofa { background: #e6f7ff; }
+.table { background: #86cd88; }
+.group { background: #f3e6ff; }
+.inner { background: #e6ffe6; }
+.shelf { background: #f9e6e6; }
+.reception { background: #fff3e6; }
+
+/* Cửa */
+.door {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #444;
+}
+.table-area {
+  border: 1px dashed #75baec;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 15px;
+  background: #788ff4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  position: relative; /* để đặt bàn ở giữa */
+}
+
+.table-label {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Ghế xếp hàng ngang/dọc */
+.table-area .row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.table-area .col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.zone {
+  border: px dashed #ccc;
+  border-radius: 6px;
+  padding: 12px;
+  min-height: 120px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* ghế vào giữa */
+  align-items: center;
+  position: relative;
+}
+
+.table-small {
+  width: 40%;
+  height: 40px;   /* sofa, kệ */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Ghế luôn nổi trên bàn */
+.seat {
+  z-index: 1;
+}
+
+/* Inner nhỏ gọn lại */
+.inner-area {
+  border: 1px dashed #ccc;
+  border-radius: 10px;
+  background: #e6ffe6;
+  padding: 30px;
+  width: 300px;       /* thu nhỏ chiều rộng */
+  min-height: 100px;  /* chiều cao vừa đủ */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.seatmap-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #333;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Container tổng */
+.seatmap-container {
+  border: 6px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1000px;
+  background: #fff;
+}
+
+/* Tiêu đề */
+.seatmap-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+/* Bàn dài */
+.table-row {
+  margin: 25px 0;
+  text-align: center;
+}
+
+.table {
+  background: #c5e6b8;
+  border-radius: 6px;
+  padding: 20px;
+  display: inline-block;
+  text-align: center;
+  min-width: 500px;
+}
+
+.table-name {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.seats {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+.seats {
+  display: flex;
+  flex-direction: column; /* 2 hàng ghế: trên - dưới */
+  gap: 15px;
+  align-items: center;
+}
+
+.side {
+  display: flex;
+  flex-direction: row;   /* Ghế nằm ngang */
+  gap: 10px;
+  justify-content: center;
+}
+
+
+/* Lễ tân */
+.reception {
+  margin: 25px auto;
+  background: #fdecec;
+  border: 1px #c77;
+  border-radius: 6px;
+  padding: 8px 15px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Cửa ra vào */
+.door {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #a34;
+  text-align: left;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.card-header {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.seat {
+  width: 45px;
+  height: 45px;
+  margin: 5px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #aaa;
+  transition: 0.3s;
+}
+
+.seat.available {
+  background: #f8f9fa;
+}
+.seat.available:hover {
+  background: #0d6efd;
+  color: white;
+}
+
+.seat.selected {
+  background: #0d6efd;
+  color: white;
+}
+
+.seat.sold {
+  background: #dc3545;
+  color: white;
+  cursor: not-allowed;
+}
+.seat.available {
+  background-color: green;
+  color: white;
+}
+.seat.booked {
+  background-color: rgb(42, 155, 207);
+  color: white;
+  pointer-events: none; /* không click được */
+}
+
+.seat {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  margin: 5px;
+}
+
+.seat.available { background: #28a745; }  /* xanh: trống */
+.seat.selected  { background: #007bff; }  /* xanh dương: đang chọn */
+.seat.sold      { background: #dc3545; cursor: not-allowed; } /* đỏ: bận */
+
+/* Toàn trang */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* Card thiết bị */
+.card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Ảnh card */
+.card img {
+  height: 180px;          /* chiều cao đồng đều */
+  object-fit: cover;      /* ảnh không méo */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Tiêu đề */
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Nội dung */
+.card-text {
+  font-size: 0.9rem;
+  color: #666;
+  min-height: 40px; /* giữ cho text đều hàng */
+}
+
+/* Giá */
+.card-body p strong {
+  color: #198754; /* xanh lá Bootstrap */
+  font-size: 1rem;
+}
+
+/* Nút */
+.card .btn-success {
+  background-color: #198754;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.card .btn-success:hover {
+  background-color: #157347;
+  transform: scale(1.02);
+}

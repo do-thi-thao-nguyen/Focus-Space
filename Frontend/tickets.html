@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Focus-Space</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- CSS của bạn -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body class="bg-light">
+
+  <!-- HERO -->
+  <section class="hero text-white d-flex align-items-end">
+    <div class="container py-5">
+      <h1 class="hero-title display-6 mb-2">Đặt chỗ nhanh – Không bỏ lỡ khung giờ đẹp</h1>
+      <p class="hero-subtitle mb-1">Chọn vé theo giờ, xem sơ đồ ghế trống và thanh toán chỉ trong vài bước.</p>
+      <p class="mb-0">Ưu đãi dành cho học sinh – sinh viên mỗi tuần.</p>
+    </div>
+  </section>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#details">Focus-Space</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+          <li class="nav-item"><a class="nav-link active" href="tickets.html">Vé</a></li>
+          <li class="nav-item"><a class="nav-link " href="cart.html">Giỏ hàng vé</a></li>
+          <li class="nav-item"><a class="nav-link" href="transactions.html">Thanh toán vé</a></li>
+          <li class="nav-item"><a class="nav-link" href="venues.html">Venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Giỏ hàng venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="devices.html">Thiết bị</a></li>
+          <li class="nav-item"><a class="nav-link" href="transactions_venue.html">Thanh toán venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="history.html">Lịch sự kiện</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</head>
+
+  <!-- HERO nhỏ -->
+  <header class="py-5 text-center bg-white border-bottom">
+    <div class="container">
+      <h1 class="h3 mb-2">Bảng giá vé và Sơ đồ không gian</h1>
+      <p class="text-muted-ink mb-0">Chọn vé theo giờ hoặc gói ưu đãi, thêm vào giỏ để thanh toán.</p>
+    </div>
+  </header>
+
+<div class="container mt-4">
+  <div class="row">
+    <!-- Bảng giá bên trái -->
+    <div class="col-lg-3">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white fw-bold">Bảng giá vé</div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Vé 1 giờ</span><span class="fw-bold text-primary">30,000đ</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Vé 4 giờ</span><span class="fw-bold text-primary">80,000đ</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Vé HSSV</span><span class="fw-bold text-success">60,000đ</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Combo ngày</span><span class="fw-bold text-danger">135,000đ</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sơ đồ ghế bên phải -->
+    <div class="col-lg-9">
+      <h4 class="mb-3">Sơ đồ chỗ ngồi</h4>
+      <div id="seatLegend" class="mb-2">
+        <span class="legend seat available"></span> Trống
+        <span class="legend seat selected ms-3"></span> Đã chọn
+        <span class="legend seat sold ms-3"></span> Bị bán
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="seatmap-title">The Light House</div>
+<div class="layout">
+  <div class="room">
+    <!-- Inner -->
+    <div class="inner-area">
+      <div class="zone-label">Inner</div>
+      <div class="row">
+        <p><div class="seat available">I1</div>
+        <p><div class="seat available">I2</div>
+        <p><div class="seat available">I3</div>
+        <p><div class="seat available">I4</div>
+      </div>
+    </div>    
+    
+    <!-- Bàn dài 1 -->
+    <div class="table-area">
+    <div class="table-label">Bàn dài 1</div>
+    <div class="row">
+      <div class="col">
+        <div class="seat available">M1</div>
+        <div class="seat available">M2</div>
+        <div class="seat available">M3</div>
+        <div class="seat available">M4</div>
+      </div>
+      <div class="col">
+        <div class="seat available">M5</div>
+        <div class="seat available">M6</div>
+        <div class="seat available">M7</div>
+        <div class="seat available">M8</div>
+      </div>
+    </div>
+  </div>
+  <div class="table-area">
+    <div class="table-label">Bàn dài 2</div>
+    <div class="row">
+      <div class="col">
+        <div class="seat available">N1</div>
+        <div class="seat available">N2</div>
+        <div class="seat available">N3</div>
+        <div class="seat available">N4</div>
+      </div>
+      <div class="col">
+        <div class="seat available">N5</div>
+        <div class="seat available">N6</div>
+        <div class="seat available">N7</div>
+        <div class="seat available">N8</div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Lễ tân-->
+    <div class="zone reception">
+      <div class="zone-label">💼 Lễ tân</div>
+    </div>
+
+    <!-- Bàn nhóm -->
+    <div class="zone group">
+      <div class="row">
+        <div class="seat available">L1</div><div class="seat available">L2</div><div class="seat available">L3</div><div class="seat available">L4</div>
+      </div>
+      <div class="zone-label">Bàn nhóm</div>
+      <div class="row">
+        <div class="seat available">L5</div><div class="seat available">L6</div><div class="seat available">L7</div><div class="seat available">L8</div>
+      </div>
+    </div>
+
+    <!-- Sofa -->
+    <div class="zone sofa">
+      <div class="row">
+        <div class="seat available">S1</div><div class="seat available">S2</div><div class="seat available">S3</div><div class="seat available">S4</div>
+      </div>
+       <div class="zone-label">🛋 Sofa</div>
+      <div class="row">
+        <div class="seat available">S5</div><div class="seat available">S6</div><div class="seat available">S7</div><div class="seat available">S8</div>
+      </div>
+    </div>
+
+    <div class="door">🚪 Cửa ra vào</div>
+    <!-- Lễ tân -->
+     <!-- Kệ -->
+    <div class="zone shelf">
+      <div class="zone-label">📚 Kệ</div>
+      <div class="row">
+        <div class="seat available">K1</div><div class="seat available">K2</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Sơ đồ The Nest-->
+<div class="seatmap-title">The Nest</div>
+<div class="seatmap-container">
+  <!-- Bàn dài 1 -->
+  <div class="table-row">
+    <div class="table">
+      <div class="table-name">Bàn dài 1</div>
+      <div class="seats">
+        <div class="side">
+          <div class="seat available">A1</div>
+          <div class="seat available">A2</div>
+          <div class="seat available">A3</div>
+          <div class="seat available">A4</div>
+        </div>
+        <div class="side">
+          <div class="seat available">A5</div>
+          <div class="seat available">A6</div>
+          <div class="seat available">A7</div>
+          <div class="seat available">A8</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bàn dài 2 -->
+  <div class="table-row">
+    <div class="table">
+      <div class="table-name">Bàn dài 2</div>
+      <div class="seats">
+        <div class="side">
+          <div class="seat available">B1</div>
+          <div class="seat available">B2</div>
+          <div class="seat available">B3</div>
+          <div class="seat available">B4</div>
+        </div>
+        <div class="side">
+          <div class="seat available">B5</div>
+          <div class="seat available">B6</div>
+          <div class="seat available">B7</div>
+          <div class="seat available">B8</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bàn dài 3 -->
+  <div class="table-row">
+    <div class="table">
+      <div class="table-name">Bàn dài 3</div>
+      <div class="seats">
+        <div class="side">
+          <div class="seat available">C1</div>
+          <div class="seat available">C2</div>
+          <div class="seat available">C3</div>
+          <div class="seat available">C4</div>
+        </div>
+        <div class="side">
+          <div class="seat available">C5</div>
+          <div class="seat available">C6</div>
+          <div class="seat available">C7</div>
+          <div class="seat available">C8</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Lễ tân và cửa -->
+  <div class="zone reception">
+    <div class="reception">💼 Lễ tân</div>
+  </div>  
+  <div class="door">🚪 Cửa ra vào</div>
+</div>
+
+<!-- Modal chọn vé -->
+<div class="modal fade" id="ticketModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Chọn loại vé</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="ticketForm">
+          <input type="hidden" id="selectedSeat" />
+          <div class="alert alert-warning" style="font-size:14px; margin-bottom:10px;">
+            ⚠️ Quý khách vui lòng kiểm tra lịch sự kiện trước khi đặt chỗ.  
+            Nếu phát sinh sự cố, vui lòng liên hệ bộ phận hỗ trợ qua hotline 
+            <strong>0123 456 789</strong> hoặc email 
+            <a href="mailto:support@focus-space.vn">support@focus-space.vn</a>.
+          </div>
+
+          <!-- Loại vé -->
+          <div class="mb-3">
+            <label class="form-label">Loại vé</label>
+            <select id="ticketType" class="form-select" required>
+              <option value="1hour">Vé 1 giờ - 30,000đ</option>
+              <option value="4hour">Vé 4 giờ - 80,000đ</option>
+              <option value="student">HSSV - 60,000đ</option>
+              <option value="combo">Combo ngày - 135,000đ</option>
+            </select>
+          </div>
+
+          <!-- Số lượng -->
+          <div class="mb-3">
+            <label class="form-label">Số lượng</label>
+            <input type="number" id="ticketQty" value="1" min="1" class="form-control"/>
+          </div>
+
+          <!-- Ngày -->
+          <div class="mb-3">
+            <label class="form-label">Ngày</label>
+            <input type="date" id="ticketDate" class="form-control" required />
+          </div>
+
+          <!-- Giờ -->
+          <div class="mb-3">
+            <label class="form-label">Giờ</label>
+            <input type="time" id="ticketTime" class="form-control" required />
+            <small class="text-muted">
+              ⏰ Quán mở cửa 09:00 - 18:00. Sau 15:00 chỉ bán vé 1 giờ.
+            </small>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" id="btnAddToCart" class="btn btn-primary">Thêm vào giỏ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+<!-- TRANG TĨNH: THÔNG TIN CÔNG TY (đẹp hơn + MXH) -->
+  <section id="about" class="section container py-5">
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-4">
+        <div class="row g-4">
+          <!-- Cột 1: Liên hệ -->
+          <div class="col-md-6">
+            <h4 class="fw-bold mb-3">Thông tin công ty</h4>
+            <p class="mb-2">
+              <i class="bi bi-building text-primary me-2"></i>
+              <b>Công ty:</b> ABC Booking JSC
+            </p>
+            <p class="mb-2">
+              <i class="bi bi-geo-alt text-primary me-2"></i>
+              <b>Địa chỉ:</b> 123 Main, Quận 1, TP Hồ Chí Minh
+            </p>
+            <p class="mb-2">
+              <i class="bi bi-telephone text-primary me-2"></i>
+              <b>Điện thoại:</b> 0123 456 789
+            </p>
+            <p class="mb-0">
+              <i class="bi bi-envelope text-primary me-2"></i>
+              <b>Email:</b> support@focus-space.vn
+            </p>
+          </div>
+
+          <!-- Cột 2: Giới thiệu + MXH -->
+          <div class="col-md-6">
+            <h4 class="fw-bold mb-3">Về chúng tôi</h4>
+            <p class="text-muted-ink">
+              Chúng tôi vận hành hệ thống đặt vé và chỗ ngồi với mục tiêu mang lại không gian học tập và làm việc yên tĩnh, tiện nghi và minh bạch.
+            </p>
+            <div class="d-flex flex-wrap gap-2 mt-2">
+              <a class="btn btn-outline-primary btn-sm" href="https://facebook.com/" target="_blank" rel="noopener">
+                <i class="bi bi-facebook me-1"></i>Facebook
+              </a>
+              <a class="btn btn-outline-danger btn-sm" href="https://instagram.com/" target="_blank" rel="noopener">
+                <i class="bi bi-instagram me-1"></i>Instagram
+              </a>
+              <a class="btn btn-outline-success btn-sm" href="https://zalo.me/" target="_blank" rel="noopener">
+                <i class="bi bi-chat-dots me-1"></i>Zalo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 bg-white border-top mt-5">
+    <div class="container small text-muted">© 2025 BookingApp. All rights reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Nối API thực tế/JS của bạn ở dưới nếu có -->
+<script src="./assets/js/api.js"></script>
+<script src="./assets/js/auth.js"></script>
+<script src="./assets/js/ticket.js"></script>
+
+</body>
+</html>
+
+

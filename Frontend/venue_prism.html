@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Focus-Space</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+  <!-- HERO -->
+  <section class="hero d-flex align-items-end">
+    <div class="container py-5">
+      <h1 class="hero-title display-6 mb-2">Đặt không gian sự kiện – Nhanh chóng & Tiện lợi</h1>
+      <p class="mb-0">Chọn Venue, thêm thiết bị và thanh toán chỉ trong vài bước.</p>
+    </div>
+  </section>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#">Focus-Space</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+          <li class="nav-item"><a class="nav-link" href="tickets.html">Vé</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Giỏ hàng vé</a></li>
+          <li class="nav-item"><a class="nav-link" href="transactions.html">Thanh toán vé</a></li>
+          <li class="nav-item"><a class="nav-link active" href="venues.html">Venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="devices.html">Thiết bị</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Giỏ hàng venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="transactions_venue.html">Thanh toán venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="history.html">Lịch sự kiện</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <style>
+    .carousel img { height: 400px; object-fit: cover; }
+  </style>
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+  <div class="row g-4">
+    <div class="col-md-7">
+      <div id="carouselPrism" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img src="./assets/img/P1.jpg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./assets/img/P2.jpg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./assets/img/P3.jpg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./assets/img/P4.jpg" class="d-block w-100"></div>
+          <div class="carousel-item"><img src="./assets/img/P5.jpg" class="d-block w-100"></div>
+          
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPrism" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPrism" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="col-md-5">
+      <h2>The Prism</h2>
+      <p><i class="bi bi-geo-alt"></i> Tầng Trệt, 152 Nam Kỳ Khởi Nghĩa, phường Sài Gòn</p>
+      <p><i class="bi bi-people"></i> Sức chứa: 70 người</p>
+      <p><i class="bi bi-cash-stack"></i> Giá thuê: <strong>8.000.000 VND</strong></p>
+      <p>Không gian cao cấp, hiện đại, phù hợp với các sự kiện đông người.</p>
+      <button class="btn btn-success w-100" onclick="openBookingModal('66ee1f8a7c9b123456789ghi',{priceMorning: 8000000, priceAfternoon: 8000000, priceFull: 12000000})">Thuê ngay</button>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Chọn thông tin thuê</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="form-label">Ngày thuê</label>
+          <input type="date" id="bookingDate" class="form-control">
+        </div>
+        <div class="alert alert-warning" style="font-size:14px; margin-bottom:10px;">
+          ⚠️ Quý khách vui lòng kiểm tra lịch sự kiện trước khi đặt thuê để tránh trùng lặp.  
+          Nếu phát sinh sự cố, vui lòng liên hệ bộ phận hỗ trợ qua hotline 
+          <strong>0123 456 789</strong> hoặc email 
+          <a href="mailto:support@focus-space.vn">support@focus-space.vn</a>.
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Chọn buổi</label>
+          <select id="bookingSession" class="form-select">
+            <option value="morning">Sáng</option>
+            <option value="afternoon">Chiều</option>
+            <option value="full">Cả ngày</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Số lượng khách</label>
+          <input type="number" id="guestCount" class="form-control" min="1" value="50">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button class="btn btn-primary" onclick="addVenue()">Xác nhận thuê</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./assets/js/common.js"></script>
+<script src="./assets/js/venue_prism.js"></script>
+<!-- TRANG TĨNH: THÔNG TIN CÔNG TY + MXH -->
+  <section id="about" class="section container py-5">
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-4">
+        <div class="row g-4">
+          <!-- Cột 1: Liên hệ -->
+          <div class="col-md-6">
+            <h4 class="fw-bold mb-3">Thông tin công ty</h4>
+            <p class="mb-2"><i class="bi bi-building text-primary me-2"></i><b>Công ty:</b> ABC Booking JSC</p>
+            <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i><b>Địa chỉ:</b> 123 Main, Quận 1, TP Hồ Chí Minh</p>
+            <p class="mb-2"><i class="bi bi-telephone text-primary me-2"></i><b>Điện thoại:</b> 0123 456 789</p>
+            <p class="mb-0"><i class="bi bi-envelope text-primary me-2"></i><b>Email:</b> support@focus-space.vn</p>
+          </div>
+          <!-- Cột 2: Giới thiệu + MXH -->
+          <div class="col-md-6">
+            <h4 class="fw-bold mb-3">Về chúng tôi</h4>
+            <p class="text-muted-ink">Chúng tôi vận hành hệ thống đặt vé và chỗ ngồi với mục tiêu mang lại không gian học tập và làm việc yên tĩnh, tiện nghi và minh bạch.</p>
+            <div class="d-flex flex-wrap gap-2 mt-2">
+              <a class="btn btn-outline-primary btn-sm" href="https://facebook.com/" target="_blank" rel="noopener"><i class="bi bi-facebook me-1"></i>Facebook</a>
+              <a class="btn btn-outline-danger btn-sm" href="https://instagram.com/" target="_blank" rel="noopener"><i class="bi bi-instagram me-1"></i>Instagram</a>
+              <a class="btn btn-outline-success btn-sm" href="https://zalo.me/" target="_blank" rel="noopener"><i class="bi bi-chat-dots me-1"></i>Zalo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

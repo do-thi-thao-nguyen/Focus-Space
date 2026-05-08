@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Focus-Space</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- CSS của bạn -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body class="bg-light">
+
+  <!-- HERO -->
+  <section class="hero text-white d-flex align-items-end">
+    <div class="container py-5">
+      <h1 class="hero-title display-6 mb-2">Đặt chỗ nhanh – Không bỏ lỡ khung giờ đẹp</h1>
+      <p class="hero-subtitle mb-1">Chọn vé theo giờ, xem sơ đồ ghế trống và thanh toán chỉ trong vài bước.</p>
+      <p class="mb-0">Ưu đãi dành cho học sinh – sinh viên mỗi tuần.</p>
+    </div>
+  </section>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#details">Focus-Space</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+          <li class="nav-item"><a class="nav-link" href="tickets.html">Vé</a></li>
+          <li class="nav-item"><a class="nav-link active" href="cart.html">Giỏ hàng vé</a></li>
+          <li class="nav-item"><a class="nav-link" href="transactions.html">Thanh toán vé</a></li>
+          <li class="nav-item"><a class="nav-link" href="venues.html">Venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Giỏ hàng venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="devices.html">Thiết bị</a></li>
+          <li class="nav-item"><a class="nav-link" href="transactions_venue.html">Thanh toán venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="history.html">Lịch sự kiện</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</head>
+<body>
+<div class="container my-4">
+  <h2 class="mb-3">🛒 Giỏ hàng của bạn</h2>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label class="form-label">Họ tên</label>
+      <input type="text" id="cusNameInput" class="form-control">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Email</label>
+      <input type="email" id="cusEmailInput" class="form-control">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Số điện thoại</label>
+      <input type="text" id="cusPhoneInput" class="form-control">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Địa chỉ</label>
+      <input type="text" id="cusAddrInput" class="form-control">
+    </div>
+  </div>
+
+  <table class="table table-bordered text-center align-middle">
+    <thead class="table-light">
+      <tr>
+        <th>Ghế</th>
+        <th>Loại vé</th>
+        <th>Số lượng</th>
+        <th>Giá</th>
+        <th>Ngày</th>
+        <th>Giờ</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody id="cartBody">
+      <tr><td colspan="7" class="text-muted">Giỏ hàng trống</td></tr>
+    </tbody>
+  </table>
+
+  <h5 class="text-end">Tổng cộng: <span id="cartTotal">0 đ</span></h5>
+
+  <div class="d-flex gap-2">
+    <button class="btn btn-danger" id="btnClearCart">🗑️ Xóa giỏ hàng</button>
+    <button class="btn btn-primary" id="btnCheckout">💳 Thanh toán</button>
+  </div>
+</div>
+<!-- TRANG TĨNH: THÔNG TIN CÔNG TY + MXH -->
+  <section id="about" class="section container py-5">
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-4">
+        <div class="row g-4">
+          <!-- Cột 1: Liên hệ -->
+          <div class="col-md-6">
+            <h4 class="fw-bold mb-3">Thông tin công ty</h4>
+            <p class="mb-2"><i class="bi bi-building text-primary me-2"></i><b>Công ty:</b> ABC Booking JSC</p>
+            <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i><b>Địa chỉ:</b> 123 Main, Quận 1, TP Hồ Chí Minh</p>
+            <p class="mb-2"><i class="bi bi-telephone text-primary me-2"></i><b>Điện thoại:</b> 0123 456 789</p>
+            <p class="mb-0"><i class="bi bi-envelope text-primary me-2"></i><b>Email:</b> support@focus-space.vn</p>
+          </div>
+          <!-- Cột 2: Giới thiệu + MXH -->
+          <div class="col-md-6">
+            <h4 class="fw-bold mb-3">Về chúng tôi</h4>
+            <p class="text-muted-ink">Chúng tôi vận hành hệ thống đặt vé và chỗ ngồi với mục tiêu mang lại không gian học tập và làm việc yên tĩnh, tiện nghi và minh bạch.</p>
+            <div class="d-flex flex-wrap gap-2 mt-2">
+              <a class="btn btn-outline-primary btn-sm" href="https://facebook.com/" target="_blank" rel="noopener"><i class="bi bi-facebook me-1"></i>Facebook</a>
+              <a class="btn btn-outline-danger btn-sm" href="https://instagram.com/" target="_blank" rel="noopener"><i class="bi bi-instagram me-1"></i>Instagram</a>
+              <a class="btn btn-outline-success btn-sm" href="https://zalo.me/" target="_blank" rel="noopener"><i class="bi bi-chat-dots me-1"></i>Zalo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Thư viện CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+
+<!-- Script của em -->
+<script src="./assets/js/auth.js" defer></script>
+<script src="./assets/js/cart.js" defer></script>
+</body>
+</html>
