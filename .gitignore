@@ -1,10 +1,23 @@
+# Virtual environment
 venv/
 .venv/
+env/
+
+# Python cache
 __pycache__/
 *.pyc
+
+# Environment variables
 .env
+
+# VS Code
 .vscode/
 
+# Build files
+build/
+dist/
+
+# Documents & setup files
 *.zip
 *.exe
 *.pdf
